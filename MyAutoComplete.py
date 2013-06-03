@@ -39,15 +39,14 @@ class Node:
             print 'A match is',foundWords
             return
         
-        #or if we are at a word then print that put but also continue
-        #to traverse the trie
+        #or if we are at a word then print that but but also continue
+        #to traverse the trie looking for more words that start with our input string
         if self.isaWord == True:
             print 'A match is',foundWords
   
         for key in self.keyStore.keys():
             self.keyStore[key].traverseTrie(foundWords+key)          
-        
-        
+                
     def search(self, string, foundWords=""):
         
         #Method to traverse the trie and match and wildcard match the given string
@@ -61,7 +60,7 @@ class Node:
                 foundWords = foundWords + key
                 self.keyStore[key].search(string, foundWords)
             else:
-                print 'No Match for',key+string
+                print 'No Match'
         else:
             if self.isaWord == True:
                 print 'A match is',foundWords            
@@ -93,8 +92,7 @@ if __name__ == '__main__':
     #root  = fileparse(sys.argv[1])
     root  = fileparse(myFile)
     
-
     #input=raw_input()
-    input = "wind"
+    input = "win"
     print "Input:",input
     root.search(input)
