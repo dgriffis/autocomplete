@@ -29,7 +29,7 @@ class Node:
 			node.add_item(string)
 
 
-	def dfs(self, sofar=None):
+	def dfs(self, sofar=""                          ):
 		'''Perform Depth First Search Traversal'''
 		
 		# When hash of the current node is empty, that means it is a leaf node. 
